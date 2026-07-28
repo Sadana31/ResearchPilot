@@ -1,4 +1,15 @@
+import { useEffect, useState } from "react";
+
 function App() {
+  const [backendStatus, setBackendStatus] = useState("Connecting...");
+
+  useEffect(() => {
+    fetch("http://localhost:5000")
+      .then((res) => res.json())
+      .then((data) => setBackendStatus(data.message))
+      .catch(() => setBackendStatus("❌ Backend not connected"));
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-50">
 
@@ -9,7 +20,7 @@ function App() {
         </h1>
 
         <div className="space-x-4">
-          <button className="rounded-lg px-5 py-2 border">
+          <button className="rounded-lg border px-5 py-2">
             Login
           </button>
 
@@ -37,8 +48,12 @@ function App() {
           write literature reviews.
         </p>
 
-        <div className="mt-10 flex gap-4">
+        {/* Backend Status */}
+        <div className="mt-6 rounded-lg bg-green-100 px-5 py-3 text-green-700 shadow">
+          <strong>Backend Status:</strong> {backendStatus}
+        </div>
 
+        <div className="mt-10 flex gap-4">
           <button className="rounded-xl bg-blue-600 px-8 py-3 font-semibold text-white hover:bg-blue-700">
             Get Started
           </button>
@@ -46,13 +61,10 @@ function App() {
           <button className="rounded-xl border px-8 py-3 font-semibold hover:bg-gray-100">
             Learn More
           </button>
-
         </div>
 
         {/* Search */}
-
         <div className="mt-16 flex w-full max-w-3xl rounded-xl bg-white p-2 shadow-lg">
-
           <input
             type="text"
             placeholder="Search research papers..."
@@ -62,13 +74,11 @@ function App() {
           <button className="rounded-lg bg-blue-600 px-8 text-white hover:bg-blue-700">
             Search
           </button>
-
         </div>
 
       </section>
 
       {/* Features */}
-
       <section className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 pb-20 md:grid-cols-3">
 
         <div className="rounded-2xl bg-white p-8 shadow-md">
