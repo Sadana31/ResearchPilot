@@ -35,6 +35,43 @@ To build an intelligent research companion that enables researchers and students
 
 ---
 
+# 🎨 Software Design
+
+ResearchPilot uses a modular design approach that separates user interface components, backend responsibilities, data access, external scholarly services, and AI services. This separation improves maintainability, reduces coupling between modules, and allows individual components to be modified or extended without significantly affecting the rest of the system.
+
+## Design Artifacts
+
+The editable Draw.io diagrams and exported images are available in the `/design/` directory.
+
+### Architecture Diagram
+
+![ResearchPilot Architecture](design/ResearchPilot_Architecture.png)
+
+### Component Diagram
+
+![ResearchPilot Components](design/ResearchPilot_Component_Diagram.png)
+
+### Data Flow Diagram
+
+![ResearchPilot Data Flow](design/ResearchPilot_Data_Flow.png)
+
+## UI Design
+
+The ResearchPilot interface was designed using Figma and includes six primary screens:
+
+1. Landing Page
+2. Login
+3. Dashboard
+4. Search Results
+5. Paper Details
+6. Literature Review Generator
+
+The Figma prototype link is available in:
+
+`design/Figma_Link.txt`
+
+--
+
 # 👥 Target Users
 
 ## Undergraduate Students
@@ -94,7 +131,7 @@ To build an intelligent research companion that enables researchers and students
 - Research Paper Search
 - AI Paper Summarization
 - Literature Review Generation
-- Save Favourite Papers
+- Save Papers
 - Responsive User Interface
 
 ## Should Have
@@ -135,7 +172,7 @@ The project will be considered successful if it can:
 # ⚠️ Assumptions
 
 - Users have internet connectivity.
-- Google Scholar or scholarly APIs remain available.
+- External scholarly APIs remain available.
 - AI services are accessible during request processing.
 - Users possess basic knowledge of academic research.
 
@@ -167,16 +204,22 @@ The project will be considered successful if it can:
 
 - PostgreSQL
 <<<<<<< HEAD
+<<<<<<< HEAD
 - Docker
+=======
+- Prisma ORM
+>>>>>>> 042ec65 (Review 2: Design folder added, ReadME Updated)
 
-## Branching Strategy
+## External Services
 
-This project follows the **GitHub Flow** branching model.
+- Semantic Scholar API
+- CrossRef API
+- arXiv API
+- AI / LLM Services
 
-- `main` contains the stable version of the project.
-- Each new feature is developed in a separate feature branch.
-- Feature branches are merged into `main` after completion and testing.
+## Development Tools
 
+<<<<<<< HEAD
 Current feature branches:
 - feature/readme
 - feature/frontend
@@ -187,15 +230,22 @@ Current feature branches:
 
 ## Development Tools
 
+=======
+>>>>>>> 042ec65 (Review 2: Design folder added, ReadME Updated)
 - Docker Desktop
 - Git
 - GitHub
 - VS Code
+<<<<<<< HEAD
+=======
+- npm
+>>>>>>> 042ec65 (Review 2: Design folder added, ReadME Updated)
 
 ---
 
 # 🏗 System Architecture
 
+<<<<<<< HEAD
 ```text
                 User
 
@@ -237,6 +287,27 @@ Current feature branches:
 
           AI Model / LLM API
 ```
+=======
+ResearchPilot follows a modular web application architecture consisting of a React frontend, Express.js backend, Prisma ORM, PostgreSQL database, external scholarly APIs, and AI services.
+
+![ResearchPilot Architecture](design/ResearchPilot_Architecture.png)
+
+---
+
+# 🧩 Component / Module Architecture
+
+The application is organized into separate frontend and backend modules to improve maintainability and separation of responsibilities.
+
+![ResearchPilot Component Diagram](design/ResearchPilot_Component_Diagram.png)
+
+---
+
+# 🔄 Data Flow
+
+The data flow describes how research requests move through the frontend, backend, external services, AI services, and database.
+
+![ResearchPilot Data Flow](design/ResearchPilot_Data_Flow.png)
+>>>>>>> 042ec65 (Review 2: Design folder added, ReadME Updated)
 
 ---
 
@@ -247,17 +318,40 @@ ResearchPilot/
 
 ├── frontend/
 │   ├── src/
+<<<<<<< HEAD
+=======
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── contexts/
+│   │   ├── hooks/
+│   │   ├── layouts/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── types/
+│   │   ├── utils/
+│   │   ├── App.jsx
+│   │   └── main.jsx
+>>>>>>> 042ec65 (Review 2: Design folder added, ReadME Updated)
 │   ├── public/
 │   ├── package.json
 │   └── vite.config.js
 │
 ├── backend/
 │   ├── src/
+<<<<<<< HEAD
 │   ├── prisma/
+=======
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   └── routes/
+>>>>>>> 042ec65 (Review 2: Design folder added, ReadME Updated)
 │   ├── package.json
 │   ├── Dockerfile
 │   └── .env
 │
+<<<<<<< HEAD
 ├── docker-compose.yml
 └── README.md
 ```
@@ -443,3 +537,17 @@ Project Name:
 
 This project is intended for educational purposes only.
 >>>>>>> dd79661 (Updated readme file)
+=======
+├── design/
+│   ├── ResearchPilot_Architecture.drawio
+│   ├── ResearchPilot_Architecture.png
+│   ├── ResearchPilot_Component_Diagram.drawio
+│   ├── ResearchPilot_Component_Diagram.png
+│   ├── ResearchPilot_Data_Flow.drawio
+│   ├── ResearchPilot_Data_Flow.png
+│   ├── Figma_Link.txt
+│   └── figma/
+│
+├── docker-compose.yml
+└── README.md
+>>>>>>> 042ec65 (Review 2: Design folder added, ReadME Updated)
